@@ -1,10 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-
-const rootReducer = (state, action) => {
-    state
-}
+import { configureStore } from '@reduxjs/toolkit';
+import { balanceReducer } from './balanceSlice';
 
 export const store = configureStore({
-    reducer: rootReducer,
-    state:,
+  reducer: {
+    balance: balanceReducer,
+  },
 });
