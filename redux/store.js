@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import balanceReducer from './balanceSlice';
+import tasksReducer from './tasksSlice';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
@@ -26,6 +27,7 @@ const persistedBalanceReducer = persistReducer(
 export const store = configureStore({
   reducer: {
     balance: persistedBalanceReducer,
+    tasks: tasksReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
