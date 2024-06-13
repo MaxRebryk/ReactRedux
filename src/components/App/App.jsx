@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Balance from '../Balance/Balance';
 import './App.css';
 import TasksList from '../TasksList/TasksList';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTasks } from '../../../redux/operations';
-import { selectTasks } from '../../../redux/tasksSlice';
-import Loader from '../loader/Loader';
+
+import Loader from '../Loader/Loader';
+import TaskForm from '../TaskForm/TaskForm';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Balance />
+      <TaskForm />
       {tasks ? <TasksList tasks={tasks} /> : <Loader />}
     </>
   );

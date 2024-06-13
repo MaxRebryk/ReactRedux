@@ -1,9 +1,6 @@
-import { useSelector } from 'react-redux';
 import Task from '../Task/Task';
-import { selectTasks } from '../../../redux/tasksSlice';
 
 export default function TasksList({ tasks }) {
-  console.log(tasks);
   return (
     <div>
       <ul>
