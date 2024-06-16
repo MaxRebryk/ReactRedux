@@ -7,6 +7,8 @@ import { fetchTasks } from '../../../redux/operations';
 
 import Loader from '../Loader/Loader';
 import TaskForm from '../TaskForm/TaskForm';
+import TextFilter from '../TextFilter/TextFilter';
+import { selectTasks } from '../../../redux/tasksSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,12 +16,15 @@ function App() {
     dispatch(fetchTasks());
   }, [dispatch]);
 
-  const tasks = useSelector(state => state.tasks.items);
+  const tasks = useSelector(selectTasks);
 
   return (
     <>
       <Balance />
+
       <TaskForm />
+
+      <TextFilter />
       {tasks ? <TasksList tasks={tasks} /> : <Loader />}
     </>
   );
